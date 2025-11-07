@@ -1,9 +1,12 @@
+import { KosarContext } from "../contexts/KosarContext.js"
+import { useContext } from "react";
 
 export default function Konyv(props){
+  const {kosarba} = useContext(KosarContext) 
 
-    function kosarba(){
+    function kosar(){
         console.log(props.index)
-        props.kosarbafv(props.index)
+        kosarba(props.index)
     }
 
 return(
@@ -12,7 +15,7 @@ return(
         <h5 className="card-title">{props.adat.cim}</h5>
         <p className="card-text">{props.adat.szerzo}</p>
         <p className="card-text">{props.adat.leiras}</p>
-        <button type="button" className="btn btn-primary" onClick={kosarba}>Kosárba</button>
+        <button type="button" className="btn btn-primary" onClick={kosar}>Kosárba</button>
     </div>
     </div>
 )
